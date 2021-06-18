@@ -1,1 +1,26 @@
 # MotilityAnalysis-MAC
+
+Glia image processing before running MotilitygGui: AutoquantX, ImageJ
+
+Image the same glia through different timepoints. Deblur collected images with AutoquantX program: drag images into the manager. For each image set parametrer: spacing values according to the zoom, channel (GFP mostly), type of microscope- multiphoton imaging, lens 60X1.2NA water. Click apply. Then 3D symbol from upper edge -> 3D deconvolution.  Decheck “default”, change iteration nr from 10 to 3. Check optics information. Click arrow button (launch).  The program will create deconvoluted files into the same folder where are the originals adding 3 in the beginning, without erasing the originals.
+ImageJ: open the same glia different timepoints. Use . and , to move through slices, clean them from neurons and other irrelevant noise by using freehand tool to mark the area to be cleaned and F to fill with the background colour. Background colour can be set from the toolbar, “set background” button.
+Do Z projection of the one timepoint stack, to check whether it contains formost the glia. Then create a stack of different timepoints Zstacks (image -> stacks _> images to stack). Crop the edges if necessary. Use stackreg plugin to align the figures in the stack on top of each other. Crop if necessary, save as tif. 
+
+Instructions to use Motility GUI v2
+In general doing every task there are instructions on the screen, under the parametersPanel.
+
+1.	Copy suitable version (Mac or PC) motility GUI folders on your computer (for example under the MATLAB folder). Unless you know what you are doing, don’t modify the contents of GUIcontrol folder. Keep the GUI files and folders in one folder.
+2.	Open motilityGUI.m script  in Matlab. On lines 56 – 59 define the location of folders in your computer. Run MotilityGui .m-> this will open the user interface.
+3.	In the upper right corner of the taskPanel, you can “lock” and “unlock” the tasks to switch between them. After choosing a task, the tasks get “locked”. 
+4.	Check that the tasks are “unlocked” and choose “Define Cells” in the taskPanel.
+5.	Define the numbers of cell groups and individual cells, following instructions that appear over the text box in the lower part of the window. Type the number in the text box. You can edit the names of the folders and cells either in the GUI (when you choose “Edit” in the optionPanel) or in the Finder(Mac) or My Computer(PC). GUI creates the subfolders including Raw_Images folder. This is where you have to copy your image series  .tif  stack (where images from different time points have been aligned already, for example with the Image J plugin StackReg). 
+6.	Unlock tasks and choose  “Process Images”. Use functionPanel to load  the raw image you want to work with.  When prompted by instructions, input timestep in minutes into the text box in the lower part of the window and press enter (either on keyboard or the “enter” button on screen).
+7.	Choose edge detection option from the functionPanel.  Detect edge “A” is a more commonly used Sobel edge detection method. Edge detect “B” is based on scaling images. When detecting edge, change the parametres in the optionPanel – Treshold, Structuring Radius, Minimum Area if desired to get the best representation of the image. You can change the parametres by choosing the slider function from the dropdown menu in the optionPanel. You can use “Show Zoom Box” function from the optionPanel to focus on an area. You can also crop artifacts using the “Crop” in functionPanel, but for this you first need to save the edge detection results. “Crop” enables you to crop in the main image or a zoomed-in subset (select from the optionPanel). Edge detection results and images will be saved in your cell folder under “Processed images”. 
+8.	After saving edge detection results you can continue with dilation. Similarly, change the slider function to get the best parametres, you can zoom and crop. Now, when cropping, you can select whether to crop edge detection images or dilated images. When happy, save the results and they will be in your cell folder “Processed images” folder.
+9.	When dilated images are saved, you can unlock the tasks and choose Analysis. Load image and the processed image folder you want to use. In function panel, you can exclude non-quality timepoints, if needed. After doing that, save the list.  It is also possible to “Calculate Pixel Frequencies from the functionPanel. This enables using frequency filter to get rid of artifact pixels. However, using frequency filter is only recommended if you have many timepoints with a time interval that is sufficiently small so that all motility gets captured (f.ex – 55 timepoints with 20 sec resolution in case of our radial glia cells).  If you only have a few time points, that is not enough for using the frequency filter.
+10.	Whether or not you use “Calculate Pixel Frequencies”, you can go on with “Calculate Global Results”. You can look at result images choosing options in the optionPanel. Save the results. You can look at the values and images under your cell folder in the “Results” folder.
+11.	If you have results from several cells and/or groups, you can use the “Results” option in the taskPanel. Here you can compare, plot and export group results as text files, images and .mat files.
+
+ 
+
+
