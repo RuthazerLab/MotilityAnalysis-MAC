@@ -1,0 +1,48 @@
+   Index| Width|                                                Tag|
+
+       1|   250|                        Default Single Column Width|
+
+       2|   125|                        Default Double Column Width|
+
+       3|    25|                                         measFreqXY|
+
+       4|    85|                                       measFreqFreq|
+
+       5|    85|                                        measFreqAMP|
+
+       6|    25|                                       loadCellCol1|
+
+       7|    25|                                       loadCellCol2|
+
+       8|    80|                                       loadCellCol3|
+
+       9|    80|                                       loadCellCol4|
+
+      10|    45|                                       loadCellCol5|
+
+      11|    25|                                      loadGroupCol1|
+
+      12|    25|                                      loadGroupCol2|
+
+      13|    85|                                      loadGroupCol3|
+
+      14|    85|                                      loadGroupCol4|
+
+      15|   125|                                    excludeTimeCol1|
+
+      16|   100|                                    excludeTimeCol1|
+
+      17|    65|                                            calCol1|
+
+      18|    35|                                            calCol2|
+
+      19|    85|                                            calCol3|
+
+      20|    35|                                            calCol4|
+
+      21|    25|                                        BAtrendCol1|
+
+      22|   110|                                        BAtrendCol2|
+
+      23|   110|                                        BAtrendCol3|
+
